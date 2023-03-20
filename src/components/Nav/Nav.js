@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Nav.css';
+import Logo from './Logo.png'
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,20 +23,12 @@ function Nav() {
     <nav className="Navbar">
       <ul className={`Navbar-menu ${isMenuOpen ? 'is-open' : ''}`}>
         <li className="Navbar-item"><a href="#" className="Navbar-link">Home</a></li>
-        <li className="Navbar-item"><a href="#" className="Navbar-link">About</a></li>
-        <li className="Navbar-item"><a href="#" className="Navbar-link">Services</a></li>
-        <li className="Navbar-item"><a href="#" className="Navbar-link">Contact</a></li>
+        <li className="Navbar-item"><a href="#" className="Navbar-link">Movies</a></li>
+        <img src={Logo} alt="Logo" className='Navbar-logo' />
+        <li className="Navbar-item"><a href="#" className="Navbar-link">TvShow</a></li>
+        <li className="Navbar-item"><a href="#" className="Navbar-link">Genre</a></li>
+        <li className="Navbar-item"><a href="#" className="Navbar-link">Year</a></li>
       </ul>
-      <form className="Navbar-search-form" onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          className="Navbar-search-input"
-          placeholder="Search"
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-        />
-        <button type="submit" className="Navbar-search-button">Search</button>
-      </form>
       <button className="Navbar-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
         <span></span>
         <span></span>
