@@ -6,7 +6,7 @@ function Header() {
     const [heroMovie, setHeroMovie] = useState([])
     const [genres, setGenres] = useState([])
     useEffect(() => {
-        const apiKey = 'db81fd816a0a48776fd8b9ce320c6d10&language'
+        const apiKey = 'db81fd816a0a48776fd8b9ce320c6d10'
         const movieId = 414906
         const fetchHeroImage = async () => {
             const response = await fetch(
@@ -39,8 +39,8 @@ function Header() {
                     ))}
                 </ul>
                 <p className="header__subtitle">{heroMovie.overview}</p>
-                <button class="header__button">
-                    <i class="fas fa-play"></i> watch
+                <button className="header__button">
+                    <i className="fas fa-play"></i> watch
                 </button>
             </div>
         </header>
