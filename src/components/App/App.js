@@ -6,7 +6,7 @@ import Nav from '../Nav/Nav';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       <Nav />
       <Header />
       <MovieCard />
