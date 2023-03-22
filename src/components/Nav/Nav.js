@@ -30,7 +30,7 @@ function Nav() {
   }
 
   return (
-    <div>
+    <div className='test'>
       <BrowserRouter>
         <nav className="Navbar">
           <ul className={`Navbar-menu ${isMenuOpen ? 'is-open' : ''}`}>
