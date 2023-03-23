@@ -12,7 +12,6 @@ const MovieCard = () => {
         async function fetchMovies() {
             try {
                 const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=${sorted}&primary_release_year=${year}&page=1&vote_count.gte=1000&vote_average.gte=7&with_original_language=en&with_watch_providers=8&limit=${limit}`);
-
                 const data = await response.json();
 
                 setMovies(data.results);

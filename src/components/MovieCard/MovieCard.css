@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Oswald:wght@200;400&display=swap');
 
 .card-movies {
-    font-family: Arial, Helvetica, sans-serif
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .card-title {
