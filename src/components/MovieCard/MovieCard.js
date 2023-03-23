@@ -5,8 +5,7 @@ const MovieCard = () => {
     const apiKey = "db81fd816a0a48776fd8b9ce320c6d10";
     const sorted = "popularity.desc";
     const year = "2022";
-    const limit = "10";
-
+    const limit = "22";
     const [movies, setMovies] = useState([]);
     const [genres, setGenres] = useState([]);
     useEffect(() => {
@@ -21,7 +20,6 @@ const MovieCard = () => {
                 console.error(error);
             }
         }
-
         async function fetchGenres() {
             try {
                 const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`);
@@ -33,53 +31,30 @@ const MovieCard = () => {
                 console.error(error);
             }
         }
-
         fetchMovies();
         fetchGenres();
     }, []);
 
     return (
-        <div className='card-movie'>
+        <div className='card-movies'>
             <h1 className='card-title'>Popular Right now</h1>
-            <ul>
+            <ul className='movie-wrapper'>
                 {movies.map((movie) => (
-                    <li key={movie.id}>
+                    <li className='card-movie' key={movie.id}>
+                        <p className='movie-rating'>{movie.vote_average}</p>
                         <img className='card-image' src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.title} />
                         <h2 className='title-movie'>{movie.title}</h2>
-                        <p>
+                        <ul className='movie-genres'>
                             {movie.genre_ids.map((genreId) => {
                                 const genre = genres.find((g) => g.id === genreId);
-                                return genre ? genre.name : "";
-                            }).join(", ")}
-                        </p>
-                        <p>Rating: {movie.vote_average}</p>
+                                return genre ? <li className='movie-genre' key={genreId}>{genre.name}</li> : null;
+                            })}
+                        </ul>
                     </li>
                 ))}
             </ul>
         </div>
     );
-
-    // return (
-    //     <div className='card-movie'>
-    //         <h1 className='card-title'>Popular Right now</h1>
-    //         <ul>
-    //             {movies.map((movie) => (
-    //                 <li key={movie.id}>
-    //                     <img className='card-image' src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
-    //                     <h2 className='title-movie'>{movie.title}</h2>
-    //                     <ul>
-    //                         {
-    //                             genres.map(genre => (
-    //                                 <li>{genre.name}</li>
-    //                             ))
-    //                         }
-    //                     </ul>
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     </div>
-
-    // );
 };
 
 export default MovieCard;

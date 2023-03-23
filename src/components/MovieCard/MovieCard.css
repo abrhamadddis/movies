@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
 
-.card-movie {
+.card-movies {
     font-family: Arial, Helvetica, sans-serif
 }
 
@@ -12,23 +12,31 @@
     font-family: 'Oswald', sans-serif;
     display: inline-block;
     border-bottom: 2px solid;
+
 }
 
-.card-movie ul {
+.movie-wrapper {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
-.card-movie li {
+.movie-wrapper::after {
+    content: "";
+    flex-grow: 1;
+}
+
+.card-movie {
     flex: 1;
     margin: 0.5rem;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     cursor: pointer;
+    position: relative;
 }
 
 .card-image {
@@ -41,6 +49,8 @@
     margin: 0;
     color: #f2f2f2;
     font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-left: 8px;
 }
 
 .movie-play {
@@ -51,4 +61,36 @@
     border-radius: 0.5rem;
     cursor: pointer;
     margin-top: 0.5rem
+}
+
+.movie-genres {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    margin-top: 8px;
+}
+
+.movie-genre {
+    list-style-type: none;
+    color: #f2f2f2;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.movie-rating {
+    color: #000000;
+    position: absolute;
+    left: 40%;
+    top: -3%;
+    transform: translatex(-20%);
+    background: #D6E9EE;
+    border-radius: 13.5px;
+    padding: 6px 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
 }
