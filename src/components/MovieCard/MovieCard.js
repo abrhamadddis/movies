@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import "./MovieCard.css"
 
 const MovieCard = () => {
@@ -40,9 +41,14 @@ const MovieCard = () => {
             <ul className='movie-wrapper'>
                 {movies.map((movie) => (
                     <li className='card-movie' key={movie.id}>
-                        <p className='movie-rating'>{movie.vote_average}</p>
-                        <img className='card-image' src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.title} />
-                        <h2 className='title-movie'>{movie.title}</h2>
+                        <Link to={{
+                            pathname: `/movies/${movie.id}`,
+                            state: { movie: movie }
+                        }}>
+                            <p className='movie-rating'>{movie.vote_average}</p>
+                            <img className='card-image' src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.title} />
+                            <h2 className='title-movie'>{movie.title}</h2>
+                        </Link>
                         <ul className='movie-genres'>
                             {movie.genre_ids.map((genreId) => {
                                 const genre = genres.find((g) => g.id === genreId);
