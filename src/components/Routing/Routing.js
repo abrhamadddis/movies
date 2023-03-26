@@ -4,7 +4,7 @@ import MovieCard from '../MovieCard/MovieCard';
 import MovieDetail from '../MovieDetail/MovieDetail'
 import Header from "../Header/Header";
 
-import { TvShow } from '../Tvshow/Tvshow';
+import  TvShow  from '../Tvshow/Tvshow';
 import { Year } from '../Year/Year';
 import { Home } from '../Home/Home'
 import { Genre } from '../Genre/Genre'
@@ -22,6 +22,7 @@ const Routing = () => {
                     <MovieDetail />
                 </Route>
                 <Route path="/Home">
+                    <Header />
                     <MovieCard />
                 </Route>
                 <Route path="/Movies">
