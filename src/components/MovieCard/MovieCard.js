@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "./MovieCard.css"
+import { Genre } from '../Genre/Genre';
 
 const MovieCard = () => {
     const apiKey = "db81fd816a0a48776fd8b9ce320c6d10";
@@ -36,6 +37,8 @@ const MovieCard = () => {
     }, []);
 
     return (
+    <div>
+        <Genre />
         <div className='card-movies'>
             <h1 className='card-title'>Popular Right now</h1>
             <ul className='movie-wrapper'>
@@ -59,6 +62,7 @@ const MovieCard = () => {
                 ))}
             </ul>
         </div>
+    </div>
     );
 };
 
