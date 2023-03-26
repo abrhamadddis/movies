@@ -3,7 +3,7 @@ import './Nav.css';
 import Logo from './Logo.png';
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
-import { TvShow } from '../Tvshow/Tvshow';
+import TvShow from '../Tvshow/Tvshow';
 import { Year } from '../Year/Year';
 import { Home } from '../Home/Home'
 import { Genre } from '../Genre/Genre'
@@ -37,7 +37,7 @@ function Nav() {
             <li className="Navbar-item"><Link to='./Home' className="Navbar-link" >Home</Link></li>
             <li className="Navbar-item"><Link to='/Movies' className="Navbar-link">Movies</Link></li>
             <img src={Logo} alt="Logo" className='Navbar-logo' />
-            <li className="Navbar-item"><Link to='/Tvshow'className="Navbar-link" >TvShow</Link></li>
+            <li className="Navbar-item"><Link to='/Tvshow' className="Navbar-link" >TvShow</Link></li>
             <li className="Navbar-item"><Link to='/Genre' className="Navbar-link">Genre</Link></li>
             <li className="Navbar-item"><Link to='/Year' className="Navbar-link" >Year</Link></li>
           </ul>
