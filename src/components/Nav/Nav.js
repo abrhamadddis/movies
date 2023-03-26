@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import './Nav.css';
-import Logo from './Logo.png'
+import Logo from './Logo.png';
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+
+import { TvShow } from '../Tvshow/Tvshow';
+import { Year } from '../Year/Year';
+import { Home } from '../Home/Home'
+import { Genre } from '../Genre/Genre'
+import { Movies } from '../Movies/Movies'
+
+
+
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,21 +30,43 @@ function Nav() {
   // }
 
   return (
-    <nav className="Navbar">
-      <ul className={`Navbar-menu ${isMenuOpen ? 'is-open' : ''}`}>
-        <li className="Navbar-item"><a href="#" className="Navbar-link">Home</a></li>
-        <li className="Navbar-item"><a href="#" className="Navbar-link">Movies</a></li>
-        <img src={Logo} alt="Logo" className='Navbar-logo' />
-        <li className="Navbar-item"><a href="#" className="Navbar-link">TvShow</a></li>
-        <li className="Navbar-item"><a href="#" className="Navbar-link">Genre</a></li>
-        <li className="Navbar-item"><a href="#" className="Navbar-link">Year</a></li>
-      </ul>
-      <button className="Navbar-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
+    <div className='test'>
+      <BrowserRouter>
+        <nav className="Navbar">
+          <ul className={`Navbar-menu ${isMenuOpen ? 'is-open' : ''}`}>
+            <li className="Navbar-item"><Link to='./Home' className="Navbar-link" >Home</Link></li>
+            <li className="Navbar-item"><Link to='/Movies' className="Navbar-link">Movies</Link></li>
+            <img src={Logo} alt="Logo" className='Navbar-logo' />
+            <li className="Navbar-item"><Link to='/Tvshow'className="Navbar-link" >TvShow</Link></li>
+            <li className="Navbar-item"><Link to='/Genre' className="Navbar-link">Genre</Link></li>
+            <li className="Navbar-item"><Link to='/Year' className="Navbar-link" >Year</Link></li>
+          </ul>
+          <button className="Navbar-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </nav>
+        <Switch>
+          <Route path="/Home">
+            <Home />
+          </Route>
+          <Route path="/Movies">
+            <Movies />
+          </Route>
+          <Route path="/Tvshow">
+            <TvShow />
+          </Route>
+          <Route path="/Genre">
+            <Genre />
+          </Route>
+          <Route path="/Year">
+            <Year />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
+
   );
 }
 
