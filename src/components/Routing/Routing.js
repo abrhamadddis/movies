@@ -1,14 +1,14 @@
 import React from "react";
-import {Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import MovieCard from '../MovieCard/MovieCard';
 import MovieDetail from '../MovieDetail/MovieDetail'
 import Header from "../Header/Header";
 
-import  TvShow  from '../Tvshow/Tvshow';
+import TvShow from '../Tvshow/Tvshow';
 import { Year } from '../Year/Year';
 import { Home } from '../Home/Home'
 import { Genre } from '../Genre/Genre'
-import  Movies  from '../Movies/Movies'
+import Movies from '../Movies/Movies'
 
 const Routing = () => {
     return (
@@ -31,12 +31,10 @@ const Routing = () => {
                 <Route path="/Tvshow">
                     <TvShow />
                 </Route>
-                <Route path="/Genre">
-                    <Genre />
+                <Route path="/Upcoming">
+                    <Upcoming />
                 </Route>
-                <Route path="/Year">
-                    <Year />
-                </Route>
+
             </Switch>
         </Switch>
     );
