@@ -5,9 +5,7 @@ import MovieDetail from '../MovieDetail/MovieDetail'
 import Header from "../Header/Header";
 
 import TvShow from '../Tvshow/Tvshow';
-import { Year } from '../Year/Year';
-import { Home } from '../Home/Home'
-import { Genre } from '../Genre/Genre'
+import Upcoming from '../Upcoming/Upcoming'
 import Movies from '../Movies/Movies'
 
 const Routing = () => {
