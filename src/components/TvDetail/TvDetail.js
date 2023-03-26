@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import './TvDetail.css'
 
 function TvDetail() {
     const apiKey = "db81fd816a0a48776fd8b9ce320c6d10";
     const history = useHistory();
     const [tvDetails, setTvDetails] = useState(null);
-    const options = { month: 'long', day: 'numeric', year: 'numeric' };
     // const formattedDate = date.toLocaleString('en-US', options);
     useEffect(() => {
         async function fetchTvDetails() {

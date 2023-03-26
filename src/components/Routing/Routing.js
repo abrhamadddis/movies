@@ -32,7 +32,6 @@ const Routing = () => {
                 <Route path="/Upcoming">
                     <Upcoming />
                 </Route>
-
             </Switch>
         </Switch>
     );
