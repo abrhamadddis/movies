@@ -19,7 +19,6 @@ function App() {
             <MovieDetail />
           </Route>
         </Switch>
-
       </Router>
     </div>
   );
