@@ -36,31 +36,31 @@ const Movies = () => {
     }, []);
 
     return (
-    <div>
-        <div className='card-movies'>
-            <h1 className='card-title'>Popular Right now</h1>
-            <ul className='movie-wrapper'>
-                {movies.map((movie) => (
-                    <li className='card-movie' key={movie.id}>
-                        <Link to={{
-                            pathname: `/movies/${movie.id}`,
-                            state: { movie: movie }
-                        }}>
-                            <p className='movie-rating'>{movie.vote_average}</p>
-                            <img className='card-image' src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.title} />
-                            <h2 className='title-movie'>{movie.title}</h2>
-                        </Link>
-                        <ul className='movie-genres'>
-                            {movie.genre_ids.map((genreId) => {
-                                const genre = genres.find((g) => g.id === genreId);
-                                return genre ? <li className='movie-genre' key={genreId}>{genre.name}</li> : null;
-                            })}
-                        </ul>
-                    </li>
-                ))}
-            </ul>
+        <div>
+            <div className='card-movies'>
+                <h1 className='card-title'>Popular Right now</h1>
+                <ul className='movie-wrapper'>
+                    {movies.map((movie) => (
+                        <li className='card-movie' key={movie.id}>
+                            <Link to={{
+                                pathname: `/movies/${movie.id}`,
+                                state: { movie: movie }
+                            }} className="link-tag">
+                                <p className='movie-rating'>{movie.vote_average}</p>
+                                <img className='card-image' src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.title} />
+                                <h2 className='title-movie'>{movie.title}</h2>
+                            </Link>
+                            <ul className='movie-genres'>
+                                {movie.genre_ids.map((genreId) => {
+                                    const genre = genres.find((g) => g.id === genreId);
+                                    return genre ? <li className='movie-genre' key={genreId}>{genre.name}</li> : null;
+                                })}
+                            </ul>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
-    </div>
     );
 };
 
