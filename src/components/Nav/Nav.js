@@ -14,20 +14,20 @@ import { Movies } from '../Movies/Movies'
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState('');
 
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  function handleSearchInputChange(event) {
-    setSearchQuery(event.target.value);
-  }
+  // function handleSearchInputChange(event) {
+  //   setSearchQuery(event.target.value);
+  // }
 
-  function handleSearchSubmit(event) {
-    event.preventDefault();
-    alert(`You searched for: ${searchQuery}`);
-  }
+  // function handleSearchSubmit(event) {
+  //   event.preventDefault();
+  //   alert(`You searched for: ${searchQuery}`);
+  // }
 
   return (
     <div className='test'>
