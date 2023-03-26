@@ -7,7 +7,9 @@
     list-style: none;
     margin: 0 auto;
     max-width: 800px;
-    padding: 20px;
+    padding: 3rem;
+    border-radius: 1.3rem;
+    box-shadow: white 0px 1px 3px 0px, white 0px 0px 0px 1px;
 }
 
 .link-list li {
