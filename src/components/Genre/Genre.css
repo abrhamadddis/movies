@@ -1,0 +1,30 @@
+.link-list {
+    background-color: #252525;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.link-list li {
+    flex-basis: calc(100% / 6 - 10px);
+    margin: 5px;
+}
+
+.link-list a {
+    text-decoration: none;
+    /* Remove the underline */
+    color: white;
+    /* Set the link color to white */
+}
+
+
+@media (max-width: 768px) {
+    .link-list li {
+        flex-basis: calc(100% / 3 - 10px);
+    }
+}

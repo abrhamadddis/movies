@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import './Nav.css';
 import Logo from './Logo.png';
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { TvShow } from '../Tvshow/Tvshow';
-import { Year } from '../Year/Year';
-import { Home } from '../Home/Home'
-import { Genre } from '../Genre/Genre'
-import { Movies } from '../Movies/Movies'
+
 
 
 
@@ -31,7 +27,6 @@ function Nav() {
 
   return (
     <div className='test'>
-      <BrowserRouter>
         <nav className="Navbar">
           <ul className={`Navbar-menu ${isMenuOpen ? 'is-open' : ''}`}>
             <li className="Navbar-item"><Link to='./Home' className="Navbar-link" >Home</Link></li>
@@ -47,24 +42,6 @@ function Nav() {
             <span></span>
           </button>
         </nav>
-        <Switch>
-          <Route path="/Home">
-            <Home />
-          </Route>
-          <Route path="/Movies">
-            <Movies />
-          </Route>
-          <Route path="/Tvshow">
-            <TvShow />
-          </Route>
-          <Route path="/Genre">
-            <Genre />
-          </Route>
-          <Route path="/Year">
-            <Year />
-          </Route>
-        </Switch>
-      </BrowserRouter>
     </div>
 
   );
