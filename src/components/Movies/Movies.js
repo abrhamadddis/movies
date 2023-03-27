@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Genre } from '../Genre/Genre';
 
 const Movies = () => {
     const apiKey = "db81fd816a0a48776fd8b9ce320c6d10";
